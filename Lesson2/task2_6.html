@@ -1,0 +1,49 @@
+
+<meta charset="utf-8">
+<script>
+
+/*Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch)..*/
+
+function addition(x,y){
+	return (x+y)
+}
+
+function subtraction(x,y){
+	return (x-y)
+}
+
+function division (x,y){
+	return (x / y)
+}
+
+function multiplication (x,y){
+	return (x * y)
+}
+
+function mathOperation(arg1, arg2, operation){
+	switch(operation){
+		case 'сложение':
+			addition(arg1,arg2);
+			break;
+		case 'вычитание':
+			subtraction(arg1,arg2);
+			break;
+		case 'деление':
+			division(arg1,arg2);
+			break;
+		case 'умножение':
+			multiplication(arg1,arg2);
+			break;
+	}
+}
+
+const a = +prompt('Введите первое число');
+const b = +prompt('Введите второе число');
+let choice = prompt('Введите название математической операции по-русски');
+
+let result = mathOperation(a, b, choice);
+alert(result)
+
+//Примечание: пишет, что result undefined . Это очень мне грустно, очевидно тут ошибка.
+
+</script>

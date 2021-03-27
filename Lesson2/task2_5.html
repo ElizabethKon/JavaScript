@@ -1,0 +1,34 @@
+
+<meta charset="utf-8">
+<script>
+
+/*Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.*/
+
+function addition(x,y){
+	return (x+y)
+}
+
+function subtraction(x,y){
+	return (x-y)
+}
+
+function division (x,y){
+	return (x / y)
+}
+
+function multiplication (x,y){
+	return (x * y)
+}
+
+const a = +prompt ('Введите первое число');
+const b = +prompt ('Введите второе число');
+
+test1 = addition(a,b);
+test2 = subtraction(a,b);
+test3 = division(a,b);
+test4 = multiplication(a,b);
+
+
+document.write("Результат:" +"<br>"+ "Сложение: " + test1 +"<br>"+ "Вычитание: " + test2 +"<br>"+ "Деление: " + test3 +"<br>"+ "Умножение: " +test4);
+
+</script>

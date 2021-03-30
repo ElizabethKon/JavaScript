@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<script>
+  "use strict";
+
+  /*
+   С помощью цикла while вывести все простые числа в промежутке от 0 до 100. Можно без оптимизаций.
+   */
+
+  //Решение полностью взято из решения домашней работы [моё было неправильное].
+  //Чисто для себя прибавляю внизу второе решение с решетом Эратосфена (разбор решета, кстати, был в курсе по алгоритмам Phyton), хотя оно и не через while. [решение тоже не моё, просто я люблю хорошие решения]
+
+  let i = 0;
+  while (i < 100) {
+    if (isPrimeNumber(i)) {
+      console.log(i);
+    }
+    i++;
+  }
+
+  function isPrimeNumber(number) {
+    if (number < 2) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+// Решето Эратосфена
+function getPrimes(num) {
+  const composite = [];
+  const primes = [];
+  
+  for (let i = 2; i <= num; i++) {
+    if (!composite[i]) {
+      primes.push(i);
+      for (let j = i * i; j <= num; j += i) {    //i*i, потому что так быстрее вычеркивать
+        composite[j] = true;
+      } 
+    }
+  }
+  
+  return primes;
+}
+console.log(getPrimes(100))
+
+
+</script>
